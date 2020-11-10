@@ -31,26 +31,26 @@
             this.tCPeksegKezelo = new System.Windows.Forms.TabControl();
             this.tPAdatok = new System.Windows.Forms.TabPage();
             this.gBPekseg = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lBTermekLista = new System.Windows.Forms.ListBox();
+            this.lBPeksegLista = new System.Windows.Forms.ListBox();
+            this.bPeksegetHozzaad = new System.Windows.Forms.Button();
+            this.tBUjPekseg = new System.Windows.Forms.TextBox();
             this.gBpekaru = new System.Windows.Forms.GroupBox();
+            this.lBTermekek = new System.Windows.Forms.ListBox();
             this.bTermeketHozzaad = new System.Windows.Forms.Button();
             this.cBLaktozmentes = new System.Windows.Forms.CheckBox();
             this.tBNev = new System.Windows.Forms.TextBox();
             this.tBAr = new System.Windows.Forms.TextBox();
             this.tPStatisztkak = new System.Windows.Forms.TabPage();
-            this.lBTermekek = new System.Windows.Forms.ListBox();
-            this.tBUjPekseg = new System.Windows.Forms.TextBox();
-            this.bPeksegetHozzaad = new System.Windows.Forms.Button();
-            this.lBPeksegLista = new System.Windows.Forms.ListBox();
-            this.lBTermekLista = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lBPeksegek = new System.Windows.Forms.ListBox();
-            this.lNev = new System.Windows.Forms.Label();
-            this.lAlapitva = new System.Windows.Forms.Label();
-            this.lAtlagaAr = new System.Windows.Forms.Label();
-            this.lPekaruk = new System.Windows.Forms.Label();
-            this.lLegolcsobb = new System.Windows.Forms.Label();
-            this.lLegragabb = new System.Windows.Forms.Label();
             this.lLaktozmentes = new System.Windows.Forms.Label();
+            this.lLegragabb = new System.Windows.Forms.Label();
+            this.lLegolcsobb = new System.Windows.Forms.Label();
+            this.lPekaruk = new System.Windows.Forms.Label();
+            this.lAtlagaAr = new System.Windows.Forms.Label();
+            this.lAlapitva = new System.Windows.Forms.Label();
+            this.lNev = new System.Windows.Forms.Label();
+            this.lBPeksegek = new System.Windows.Forms.ListBox();
             this.tCPeksegKezelo.SuspendLayout();
             this.tPAdatok.SuspendLayout();
             this.gBPekseg.SuspendLayout();
@@ -65,7 +65,7 @@
             this.tCPeksegKezelo.Location = new System.Drawing.Point(2, 0);
             this.tCPeksegKezelo.Name = "tCPeksegKezelo";
             this.tCPeksegKezelo.SelectedIndex = 0;
-            this.tCPeksegKezelo.Size = new System.Drawing.Size(803, 451);
+            this.tCPeksegKezelo.Size = new System.Drawing.Size(718, 451);
             this.tCPeksegKezelo.TabIndex = 0;
             // 
             // tPAdatok
@@ -75,7 +75,7 @@
             this.tPAdatok.Location = new System.Drawing.Point(4, 22);
             this.tPAdatok.Name = "tPAdatok";
             this.tPAdatok.Padding = new System.Windows.Forms.Padding(3);
-            this.tPAdatok.Size = new System.Drawing.Size(795, 425);
+            this.tPAdatok.Size = new System.Drawing.Size(710, 425);
             this.tPAdatok.TabIndex = 0;
             this.tPAdatok.Text = "Adatok";
             this.tPAdatok.UseVisualStyleBackColor = true;
@@ -94,6 +94,47 @@
             this.gBPekseg.TabStop = false;
             this.gBPekseg.Text = "pékségek";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(516, 192);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lBTermekLista
+            // 
+            this.lBTermekLista.FormattingEnabled = true;
+            this.lBTermekLista.Location = new System.Drawing.Point(412, 20);
+            this.lBTermekLista.Name = "lBTermekLista";
+            this.lBTermekLista.Size = new System.Drawing.Size(277, 147);
+            this.lBTermekLista.TabIndex = 3;
+            // 
+            // lBPeksegLista
+            // 
+            this.lBPeksegLista.FormattingEnabled = true;
+            this.lBPeksegLista.Location = new System.Drawing.Point(171, 20);
+            this.lBPeksegLista.Name = "lBPeksegLista";
+            this.lBPeksegLista.Size = new System.Drawing.Size(234, 212);
+            this.lBPeksegLista.TabIndex = 2;
+            // 
+            // bPeksegetHozzaad
+            // 
+            this.bPeksegetHozzaad.Location = new System.Drawing.Point(7, 47);
+            this.bPeksegetHozzaad.Name = "bPeksegetHozzaad";
+            this.bPeksegetHozzaad.Size = new System.Drawing.Size(87, 23);
+            this.bPeksegetHozzaad.TabIndex = 1;
+            this.bPeksegetHozzaad.Text = "Hozzáadás";
+            this.bPeksegetHozzaad.UseVisualStyleBackColor = true;
+            // 
+            // tBUjPekseg
+            // 
+            this.tBUjPekseg.Location = new System.Drawing.Point(7, 20);
+            this.tBUjPekseg.Name = "tBUjPekseg";
+            this.tBUjPekseg.Size = new System.Drawing.Size(124, 20);
+            this.tBUjPekseg.TabIndex = 0;
+            // 
             // gBpekaru
             // 
             this.gBpekaru.Controls.Add(this.lBTermekek);
@@ -108,6 +149,14 @@
             this.gBpekaru.TabStop = false;
             this.gBpekaru.Text = "Pékáruk";
             // 
+            // lBTermekek
+            // 
+            this.lBTermekek.FormattingEnabled = true;
+            this.lBTermekek.Location = new System.Drawing.Point(171, 19);
+            this.lBTermekek.Name = "lBTermekek";
+            this.lBTermekek.Size = new System.Drawing.Size(518, 108);
+            this.lBTermekek.TabIndex = 4;
+            // 
             // bTermeketHozzaad
             // 
             this.bTermeketHozzaad.Location = new System.Drawing.Point(6, 107);
@@ -116,6 +165,7 @@
             this.bTermeketHozzaad.TabIndex = 3;
             this.bTermeketHozzaad.Text = "Hozzáadás";
             this.bTermeketHozzaad.UseVisualStyleBackColor = true;
+            this.bTermeketHozzaad.Click += new System.EventHandler(this.bTermeketHozzaad_Click);
             // 
             // cBLaktozmentes
             // 
@@ -159,102 +209,13 @@
             this.tPStatisztkak.Text = "Statisztkák";
             this.tPStatisztkak.UseVisualStyleBackColor = true;
             // 
-            // lBTermekek
+            // lLaktozmentes
             // 
-            this.lBTermekek.FormattingEnabled = true;
-            this.lBTermekek.Location = new System.Drawing.Point(171, 19);
-            this.lBTermekek.Name = "lBTermekek";
-            this.lBTermekek.Size = new System.Drawing.Size(518, 108);
-            this.lBTermekek.TabIndex = 4;
-            // 
-            // tBUjPekseg
-            // 
-            this.tBUjPekseg.Location = new System.Drawing.Point(7, 20);
-            this.tBUjPekseg.Name = "tBUjPekseg";
-            this.tBUjPekseg.Size = new System.Drawing.Size(124, 20);
-            this.tBUjPekseg.TabIndex = 0;
-            // 
-            // bPeksegetHozzaad
-            // 
-            this.bPeksegetHozzaad.Location = new System.Drawing.Point(7, 47);
-            this.bPeksegetHozzaad.Name = "bPeksegetHozzaad";
-            this.bPeksegetHozzaad.Size = new System.Drawing.Size(87, 23);
-            this.bPeksegetHozzaad.TabIndex = 1;
-            this.bPeksegetHozzaad.Text = "Hozzáadás";
-            this.bPeksegetHozzaad.UseVisualStyleBackColor = true;
-            // 
-            // lBPeksegLista
-            // 
-            this.lBPeksegLista.FormattingEnabled = true;
-            this.lBPeksegLista.Location = new System.Drawing.Point(171, 20);
-            this.lBPeksegLista.Name = "lBPeksegLista";
-            this.lBPeksegLista.Size = new System.Drawing.Size(234, 212);
-            this.lBPeksegLista.TabIndex = 2;
-            // 
-            // lBTermekLista
-            // 
-            this.lBTermekLista.FormattingEnabled = true;
-            this.lBTermekLista.Location = new System.Drawing.Point(412, 20);
-            this.lBTermekLista.Name = "lBTermekLista";
-            this.lBTermekLista.Size = new System.Drawing.Size(277, 147);
-            this.lBTermekLista.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(516, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lBPeksegek
-            // 
-            this.lBPeksegek.FormattingEnabled = true;
-            this.lBPeksegek.Location = new System.Drawing.Point(7, 7);
-            this.lBPeksegek.Name = "lBPeksegek";
-            this.lBPeksegek.Size = new System.Drawing.Size(252, 251);
-            this.lBPeksegek.TabIndex = 0;
-            // 
-            // lNev
-            // 
-            this.lNev.AutoSize = true;
-            this.lNev.Location = new System.Drawing.Point(266, 7);
-            this.lNev.Name = "lNev";
-            this.lNev.Size = new System.Drawing.Size(0, 13);
-            this.lNev.TabIndex = 1;
-            // 
-            // lAlapitva
-            // 
-            this.lAlapitva.AutoSize = true;
-            this.lAlapitva.Location = new System.Drawing.Point(265, 20);
-            this.lAlapitva.Name = "lAlapitva";
-            this.lAlapitva.Size = new System.Drawing.Size(0, 13);
-            this.lAlapitva.TabIndex = 2;
-            // 
-            // lAtlagaAr
-            // 
-            this.lAtlagaAr.AutoSize = true;
-            this.lAtlagaAr.Location = new System.Drawing.Point(265, 71);
-            this.lAtlagaAr.Name = "lAtlagaAr";
-            this.lAtlagaAr.Size = new System.Drawing.Size(0, 13);
-            this.lAtlagaAr.TabIndex = 3;
-            // 
-            // lPekaruk
-            // 
-            this.lPekaruk.AutoSize = true;
-            this.lPekaruk.Location = new System.Drawing.Point(266, 58);
-            this.lPekaruk.Name = "lPekaruk";
-            this.lPekaruk.Size = new System.Drawing.Size(0, 13);
-            this.lPekaruk.TabIndex = 4;
-            // 
-            // lLegolcsobb
-            // 
-            this.lLegolcsobb.AutoSize = true;
-            this.lLegolcsobb.Location = new System.Drawing.Point(265, 84);
-            this.lLegolcsobb.Name = "lLegolcsobb";
-            this.lLegolcsobb.Size = new System.Drawing.Size(0, 13);
-            this.lLegolcsobb.TabIndex = 5;
+            this.lLaktozmentes.AutoSize = true;
+            this.lLaktozmentes.Location = new System.Drawing.Point(265, 110);
+            this.lLaktozmentes.Name = "lLaktozmentes";
+            this.lLaktozmentes.Size = new System.Drawing.Size(0, 13);
+            this.lLaktozmentes.TabIndex = 7;
             // 
             // lLegragabb
             // 
@@ -264,13 +225,53 @@
             this.lLegragabb.Size = new System.Drawing.Size(0, 13);
             this.lLegragabb.TabIndex = 6;
             // 
-            // lLaktozmentes
+            // lLegolcsobb
             // 
-            this.lLaktozmentes.AutoSize = true;
-            this.lLaktozmentes.Location = new System.Drawing.Point(265, 110);
-            this.lLaktozmentes.Name = "lLaktozmentes";
-            this.lLaktozmentes.Size = new System.Drawing.Size(0, 13);
-            this.lLaktozmentes.TabIndex = 7;
+            this.lLegolcsobb.AutoSize = true;
+            this.lLegolcsobb.Location = new System.Drawing.Point(265, 84);
+            this.lLegolcsobb.Name = "lLegolcsobb";
+            this.lLegolcsobb.Size = new System.Drawing.Size(0, 13);
+            this.lLegolcsobb.TabIndex = 5;
+            // 
+            // lPekaruk
+            // 
+            this.lPekaruk.AutoSize = true;
+            this.lPekaruk.Location = new System.Drawing.Point(266, 58);
+            this.lPekaruk.Name = "lPekaruk";
+            this.lPekaruk.Size = new System.Drawing.Size(0, 13);
+            this.lPekaruk.TabIndex = 4;
+            // 
+            // lAtlagaAr
+            // 
+            this.lAtlagaAr.AutoSize = true;
+            this.lAtlagaAr.Location = new System.Drawing.Point(265, 71);
+            this.lAtlagaAr.Name = "lAtlagaAr";
+            this.lAtlagaAr.Size = new System.Drawing.Size(0, 13);
+            this.lAtlagaAr.TabIndex = 3;
+            // 
+            // lAlapitva
+            // 
+            this.lAlapitva.AutoSize = true;
+            this.lAlapitva.Location = new System.Drawing.Point(265, 20);
+            this.lAlapitva.Name = "lAlapitva";
+            this.lAlapitva.Size = new System.Drawing.Size(0, 13);
+            this.lAlapitva.TabIndex = 2;
+            // 
+            // lNev
+            // 
+            this.lNev.AutoSize = true;
+            this.lNev.Location = new System.Drawing.Point(266, 7);
+            this.lNev.Name = "lNev";
+            this.lNev.Size = new System.Drawing.Size(0, 13);
+            this.lNev.TabIndex = 1;
+            // 
+            // lBPeksegek
+            // 
+            this.lBPeksegek.FormattingEnabled = true;
+            this.lBPeksegek.Location = new System.Drawing.Point(7, 7);
+            this.lBPeksegek.Name = "lBPeksegek";
+            this.lBPeksegek.Size = new System.Drawing.Size(252, 251);
+            this.lBPeksegek.TabIndex = 0;
             // 
             // Form1
             // 

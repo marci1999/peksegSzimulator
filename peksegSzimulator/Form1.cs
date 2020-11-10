@@ -15,6 +15,13 @@ namespace peksegSzimulator
         public Form1()
         {
             InitializeComponent();
+
+
+        }
+
+        private void bTermeketHozzaad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
