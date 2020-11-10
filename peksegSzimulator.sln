@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "peksegSzimulator", "peksegSzimulator\peksegSzimulator.csproj", "{B3675B7F-84BD-4EB8-BDDE-59BAE149B9DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3675B7F-84BD-4EB8-BDDE-59BAE149B9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3675B7F-84BD-4EB8-BDDE-59BAE149B9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3675B7F-84BD-4EB8-BDDE-59BAE149B9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3675B7F-84BD-4EB8-BDDE-59BAE149B9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E17B221-38E6-42B3-8891-B7D969A253CB}
+	EndGlobalSection
+EndGlobal
