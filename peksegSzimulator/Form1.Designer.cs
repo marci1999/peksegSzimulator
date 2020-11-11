@@ -1,6 +1,6 @@
 ﻿namespace peksegSzimulator
 {
-    partial class Form1
+    partial class FPekseg
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,14 @@
             this.tCPeksegKezelo = new System.Windows.Forms.TabControl();
             this.tPAdatok = new System.Windows.Forms.TabPage();
             this.gBPekseg = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.hozzaAd = new System.Windows.Forms.Button();
             this.lBTermekLista = new System.Windows.Forms.ListBox();
             this.lBPeksegLista = new System.Windows.Forms.ListBox();
             this.bPeksegetHozzaad = new System.Windows.Forms.Button();
             this.tBUjPekseg = new System.Windows.Forms.TextBox();
             this.gBpekaru = new System.Windows.Forms.GroupBox();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.bMentes = new System.Windows.Forms.Button();
             this.lBTermekek = new System.Windows.Forms.ListBox();
             this.bTermeketHozzaad = new System.Windows.Forms.Button();
             this.cBLaktozmentes = new System.Windows.Forms.CheckBox();
@@ -82,7 +84,7 @@
             // 
             // gBPekseg
             // 
-            this.gBPekseg.Controls.Add(this.button3);
+            this.gBPekseg.Controls.Add(this.hozzaAd);
             this.gBPekseg.Controls.Add(this.lBTermekLista);
             this.gBPekseg.Controls.Add(this.lBPeksegLista);
             this.gBPekseg.Controls.Add(this.bPeksegetHozzaad);
@@ -94,14 +96,15 @@
             this.gBPekseg.TabStop = false;
             this.gBPekseg.Text = "pékségek";
             // 
-            // button3
+            // hozzaAd
             // 
-            this.button3.Location = new System.Drawing.Point(516, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "+";
-            this.button3.UseVisualStyleBackColor = true;
+            this.hozzaAd.Location = new System.Drawing.Point(516, 192);
+            this.hozzaAd.Name = "hozzaAd";
+            this.hozzaAd.Size = new System.Drawing.Size(75, 23);
+            this.hozzaAd.TabIndex = 4;
+            this.hozzaAd.Text = "+";
+            this.hozzaAd.UseVisualStyleBackColor = true;
+            this.hozzaAd.Click += new System.EventHandler(this.hozzaAd_Click);
             // 
             // lBTermekLista
             // 
@@ -127,6 +130,7 @@
             this.bPeksegetHozzaad.TabIndex = 1;
             this.bPeksegetHozzaad.Text = "Hozzáadás";
             this.bPeksegetHozzaad.UseVisualStyleBackColor = true;
+            this.bPeksegetHozzaad.Click += new System.EventHandler(this.bPeksegetHozzaad_Click);
             // 
             // tBUjPekseg
             // 
@@ -137,6 +141,8 @@
             // 
             // gBpekaru
             // 
+            this.gBpekaru.Controls.Add(this.bDelete);
+            this.gBpekaru.Controls.Add(this.bMentes);
             this.gBpekaru.Controls.Add(this.lBTermekek);
             this.gBpekaru.Controls.Add(this.bTermeketHozzaad);
             this.gBpekaru.Controls.Add(this.cBLaktozmentes);
@@ -149,6 +155,28 @@
             this.gBpekaru.TabStop = false;
             this.gBpekaru.Text = "Pékáruk";
             // 
+            // bDelete
+            // 
+            this.bDelete.Location = new System.Drawing.Point(101, 104);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(64, 23);
+            this.bDelete.TabIndex = 6;
+            this.bDelete.Text = "törlés";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Visible = false;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
+            // 
+            // bMentes
+            // 
+            this.bMentes.Location = new System.Drawing.Point(7, 104);
+            this.bMentes.Name = "bMentes";
+            this.bMentes.Size = new System.Drawing.Size(87, 23);
+            this.bMentes.TabIndex = 5;
+            this.bMentes.Text = "mentés";
+            this.bMentes.UseVisualStyleBackColor = true;
+            this.bMentes.Visible = false;
+            this.bMentes.Click += new System.EventHandler(this.bMentes_Click);
+            // 
             // lBTermekek
             // 
             this.lBTermekek.FormattingEnabled = true;
@@ -156,10 +184,11 @@
             this.lBTermekek.Name = "lBTermekek";
             this.lBTermekek.Size = new System.Drawing.Size(518, 108);
             this.lBTermekek.TabIndex = 4;
+            this.lBTermekek.SelectedIndexChanged += new System.EventHandler(this.lBTermekek_SelectedIndexChanged);
             // 
             // bTermeketHozzaad
             // 
-            this.bTermeketHozzaad.Location = new System.Drawing.Point(6, 107);
+            this.bTermeketHozzaad.Location = new System.Drawing.Point(6, 104);
             this.bTermeketHozzaad.Name = "bTermeketHozzaad";
             this.bTermeketHozzaad.Size = new System.Drawing.Size(88, 23);
             this.bTermeketHozzaad.TabIndex = 3;
@@ -204,7 +233,7 @@
             this.tPStatisztkak.Location = new System.Drawing.Point(4, 22);
             this.tPStatisztkak.Name = "tPStatisztkak";
             this.tPStatisztkak.Padding = new System.Windows.Forms.Padding(3);
-            this.tPStatisztkak.Size = new System.Drawing.Size(795, 425);
+            this.tPStatisztkak.Size = new System.Drawing.Size(710, 425);
             this.tPStatisztkak.TabIndex = 1;
             this.tPStatisztkak.Text = "Statisztkák";
             this.tPStatisztkak.UseVisualStyleBackColor = true;
@@ -273,14 +302,14 @@
             this.lBPeksegek.Size = new System.Drawing.Size(252, 251);
             this.lBPeksegek.TabIndex = 0;
             // 
-            // Form1
+            // FPekseg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 450);
             this.Controls.Add(this.tCPeksegKezelo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FPekseg";
+            this.Text = "Pékség";
             this.tCPeksegKezelo.ResumeLayout(false);
             this.tPAdatok.ResumeLayout(false);
             this.gBPekseg.ResumeLayout(false);
@@ -305,7 +334,7 @@
         private System.Windows.Forms.TextBox tBNev;
         private System.Windows.Forms.TextBox tBAr;
         private System.Windows.Forms.ListBox lBTermekek;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button hozzaAd;
         private System.Windows.Forms.ListBox lBTermekLista;
         private System.Windows.Forms.ListBox lBPeksegLista;
         private System.Windows.Forms.Button bPeksegetHozzaad;
@@ -318,6 +347,8 @@
         private System.Windows.Forms.Label lAlapitva;
         private System.Windows.Forms.Label lNev;
         private System.Windows.Forms.ListBox lBPeksegek;
+        private System.Windows.Forms.Button bDelete;
+        private System.Windows.Forms.Button bMentes;
     }
 }
 
