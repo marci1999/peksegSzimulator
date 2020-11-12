@@ -45,13 +45,23 @@
             this.tBNev = new System.Windows.Forms.TextBox();
             this.tBAr = new System.Windows.Forms.TextBox();
             this.tPStatisztkak = new System.Windows.Forms.TabPage();
-            this.lLaktozmentes = new System.Windows.Forms.Label();
-            this.lLegragabb = new System.Windows.Forms.Label();
-            this.lLegolcsobb = new System.Windows.Forms.Label();
-            this.lPekaruk = new System.Windows.Forms.Label();
-            this.lAtlagaAr = new System.Windows.Forms.Label();
-            this.lAlapitva = new System.Windows.Forms.Label();
-            this.lNev = new System.Windows.Forms.Label();
+            this.domainUpDown4 = new System.Windows.Forms.DomainUpDown();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.domainUpDown3 = new System.Windows.Forms.DomainUpDown();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dTPAlapit = new System.Windows.Forms.DateTimePicker();
+            this.tBNot1 = new System.Windows.Forms.TextBox();
+            this.tBPeksegNev = new System.Windows.Forms.TextBox();
             this.lBPeksegek = new System.Windows.Forms.ListBox();
             this.tCPeksegKezelo.SuspendLayout();
             this.tPAdatok.SuspendLayout();
@@ -121,6 +131,7 @@
             this.lBPeksegLista.Name = "lBPeksegLista";
             this.lBPeksegLista.Size = new System.Drawing.Size(234, 212);
             this.lBPeksegLista.TabIndex = 2;
+            this.lBPeksegLista.SelectedIndexChanged += new System.EventHandler(this.lBPeksegLista_SelectedIndexChanged);
             // 
             // bPeksegetHozzaad
             // 
@@ -222,13 +233,23 @@
             // 
             // tPStatisztkak
             // 
-            this.tPStatisztkak.Controls.Add(this.lLaktozmentes);
-            this.tPStatisztkak.Controls.Add(this.lLegragabb);
-            this.tPStatisztkak.Controls.Add(this.lLegolcsobb);
-            this.tPStatisztkak.Controls.Add(this.lPekaruk);
-            this.tPStatisztkak.Controls.Add(this.lAtlagaAr);
-            this.tPStatisztkak.Controls.Add(this.lAlapitva);
-            this.tPStatisztkak.Controls.Add(this.lNev);
+            this.tPStatisztkak.Controls.Add(this.domainUpDown4);
+            this.tPStatisztkak.Controls.Add(this.textBox10);
+            this.tPStatisztkak.Controls.Add(this.domainUpDown3);
+            this.tPStatisztkak.Controls.Add(this.textBox9);
+            this.tPStatisztkak.Controls.Add(this.textBox8);
+            this.tPStatisztkak.Controls.Add(this.textBox7);
+            this.tPStatisztkak.Controls.Add(this.textBox6);
+            this.tPStatisztkak.Controls.Add(this.domainUpDown2);
+            this.tPStatisztkak.Controls.Add(this.textBox5);
+            this.tPStatisztkak.Controls.Add(this.domainUpDown1);
+            this.tPStatisztkak.Controls.Add(this.textBox4);
+            this.tPStatisztkak.Controls.Add(this.textBox3);
+            this.tPStatisztkak.Controls.Add(this.textBox2);
+            this.tPStatisztkak.Controls.Add(this.textBox1);
+            this.tPStatisztkak.Controls.Add(this.dTPAlapit);
+            this.tPStatisztkak.Controls.Add(this.tBNot1);
+            this.tPStatisztkak.Controls.Add(this.tBPeksegNev);
             this.tPStatisztkak.Controls.Add(this.lBPeksegek);
             this.tPStatisztkak.Location = new System.Drawing.Point(4, 22);
             this.tPStatisztkak.Name = "tPStatisztkak";
@@ -238,61 +259,154 @@
             this.tPStatisztkak.Text = "Statisztkák";
             this.tPStatisztkak.UseVisualStyleBackColor = true;
             // 
-            // lLaktozmentes
+            // domainUpDown4
             // 
-            this.lLaktozmentes.AutoSize = true;
-            this.lLaktozmentes.Location = new System.Drawing.Point(265, 110);
-            this.lLaktozmentes.Name = "lLaktozmentes";
-            this.lLaktozmentes.Size = new System.Drawing.Size(0, 13);
-            this.lLaktozmentes.TabIndex = 7;
+            this.domainUpDown4.Location = new System.Drawing.Point(468, 190);
+            this.domainUpDown4.Name = "domainUpDown4";
+            this.domainUpDown4.Size = new System.Drawing.Size(47, 20);
+            this.domainUpDown4.TabIndex = 17;
+            this.domainUpDown4.Text = "100%";
+            this.domainUpDown4.Visible = false;
             // 
-            // lLegragabb
+            // textBox10
             // 
-            this.lLegragabb.AutoSize = true;
-            this.lLegragabb.Location = new System.Drawing.Point(265, 97);
-            this.lLegragabb.Name = "lLegragabb";
-            this.lLegragabb.Size = new System.Drawing.Size(0, 13);
-            this.lLegragabb.TabIndex = 6;
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(440, 189);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(22, 20);
+            this.textBox10.TabIndex = 16;
+            this.textBox10.Text = "db,";
             // 
-            // lLegolcsobb
+            // domainUpDown3
             // 
-            this.lLegolcsobb.AutoSize = true;
-            this.lLegolcsobb.Location = new System.Drawing.Point(265, 84);
-            this.lLegolcsobb.Name = "lLegolcsobb";
-            this.lLegolcsobb.Size = new System.Drawing.Size(0, 13);
-            this.lLegolcsobb.TabIndex = 5;
+            this.domainUpDown3.Location = new System.Drawing.Point(395, 189);
+            this.domainUpDown3.Name = "domainUpDown3";
+            this.domainUpDown3.Size = new System.Drawing.Size(39, 20);
+            this.domainUpDown3.TabIndex = 15;
+            this.domainUpDown3.Text = "100";
+            this.domainUpDown3.Visible = false;
             // 
-            // lPekaruk
+            // textBox9
             // 
-            this.lPekaruk.AutoSize = true;
-            this.lPekaruk.Location = new System.Drawing.Point(266, 58);
-            this.lPekaruk.Name = "lPekaruk";
-            this.lPekaruk.Size = new System.Drawing.Size(0, 13);
-            this.lPekaruk.TabIndex = 4;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(266, 189);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(123, 20);
+            this.textBox9.TabIndex = 14;
+            this.textBox9.Text = "Laktózmentes termékek: ";
             // 
-            // lAtlagaAr
+            // textBox8
             // 
-            this.lAtlagaAr.AutoSize = true;
-            this.lAtlagaAr.Location = new System.Drawing.Point(265, 71);
-            this.lAtlagaAr.Name = "lAtlagaAr";
-            this.lAtlagaAr.Size = new System.Drawing.Size(0, 13);
-            this.lAtlagaAr.TabIndex = 3;
+            this.textBox8.Enabled = false;
+            this.textBox8.Location = new System.Drawing.Point(378, 163);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(141, 20);
+            this.textBox8.TabIndex = 13;
+            this.textBox8.Text = "Legolcsóbb terméke: ";
             // 
-            // lAlapitva
+            // textBox7
             // 
-            this.lAlapitva.AutoSize = true;
-            this.lAlapitva.Location = new System.Drawing.Point(265, 20);
-            this.lAlapitva.Name = "lAlapitva";
-            this.lAlapitva.Size = new System.Drawing.Size(0, 13);
-            this.lAlapitva.TabIndex = 2;
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(376, 137);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(143, 20);
+            this.textBox7.TabIndex = 12;
+            this.textBox7.Text = "Legolcsóbb terméke: ";
             // 
-            // lNev
+            // textBox6
             // 
-            this.lNev.AutoSize = true;
-            this.lNev.Location = new System.Drawing.Point(266, 7);
-            this.lNev.Name = "lNev";
-            this.lNev.Size = new System.Drawing.Size(0, 13);
-            this.lNev.TabIndex = 1;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(385, 111);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(16, 20);
+            this.textBox6.TabIndex = 11;
+            this.textBox6.Text = "Ft";
+            // 
+            // domainUpDown2
+            // 
+            this.domainUpDown2.Location = new System.Drawing.Point(327, 111);
+            this.domainUpDown2.Name = "domainUpDown2";
+            this.domainUpDown2.Size = new System.Drawing.Size(52, 20);
+            this.domainUpDown2.TabIndex = 10;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(366, 85);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(17, 20);
+            this.textBox5.TabIndex = 9;
+            this.textBox5.Text = "db";
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(321, 85);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(39, 20);
+            this.domainUpDown1.TabIndex = 8;
+            this.domainUpDown1.Text = "100";
+            this.domainUpDown1.Visible = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(266, 137);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(104, 20);
+            this.textBox4.TabIndex = 7;
+            this.textBox4.Text = "Legolcsóbb terméke: ";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(266, 163);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(106, 20);
+            this.textBox3.TabIndex = 6;
+            this.textBox3.Text = "Legdrágább terméke: ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(266, 111);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(55, 20);
+            this.textBox2.TabIndex = 5;
+            this.textBox2.Text = "Átlagos ár: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(266, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(49, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "pékáruk: ";
+            // 
+            // dTPAlapit
+            // 
+            this.dTPAlapit.Location = new System.Drawing.Point(319, 33);
+            this.dTPAlapit.Name = "dTPAlapit";
+            this.dTPAlapit.Size = new System.Drawing.Size(200, 20);
+            this.dTPAlapit.TabIndex = 3;
+            this.dTPAlapit.Value = new System.DateTime(2020, 11, 12, 0, 0, 0, 0);
+            // 
+            // tBNot1
+            // 
+            this.tBNot1.Enabled = false;
+            this.tBNot1.Location = new System.Drawing.Point(266, 33);
+            this.tBNot1.Name = "tBNot1";
+            this.tBNot1.Size = new System.Drawing.Size(46, 20);
+            this.tBNot1.TabIndex = 2;
+            this.tBNot1.Text = "Alapitva: ";
+            // 
+            // tBPeksegNev
+            // 
+            this.tBPeksegNev.Enabled = false;
+            this.tBPeksegNev.Location = new System.Drawing.Point(266, 7);
+            this.tBPeksegNev.Name = "tBPeksegNev";
+            this.tBPeksegNev.Size = new System.Drawing.Size(100, 20);
+            this.tBPeksegNev.TabIndex = 1;
             // 
             // lBPeksegek
             // 
@@ -339,16 +453,26 @@
         private System.Windows.Forms.ListBox lBPeksegLista;
         private System.Windows.Forms.Button bPeksegetHozzaad;
         private System.Windows.Forms.TextBox tBUjPekseg;
-        private System.Windows.Forms.Label lLaktozmentes;
-        private System.Windows.Forms.Label lLegragabb;
-        private System.Windows.Forms.Label lLegolcsobb;
-        private System.Windows.Forms.Label lPekaruk;
-        private System.Windows.Forms.Label lAtlagaAr;
-        private System.Windows.Forms.Label lAlapitva;
-        private System.Windows.Forms.Label lNev;
         private System.Windows.Forms.ListBox lBPeksegek;
         private System.Windows.Forms.Button bDelete;
         private System.Windows.Forms.Button bMentes;
+        private System.Windows.Forms.TextBox tBPeksegNev;
+        private System.Windows.Forms.TextBox tBNot1;
+        private System.Windows.Forms.DateTimePicker dTPAlapit;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DomainUpDown domainUpDown4;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.DomainUpDown domainUpDown3;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DomainUpDown domainUpDown2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
 

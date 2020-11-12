@@ -12,6 +12,7 @@ namespace peksegSzimulator
 {
     public partial class FPekseg : Form
     {
+        int peksegSzam = 0;
         public FPekseg()
         {
             InitializeComponent();
@@ -30,8 +31,6 @@ namespace peksegSzimulator
                 MessageBox.Show("nincs kitültve anév vagy az ár mező");
             }
         }
-
-
 
         private void bMentes_Click(object sender, EventArgs e)
         {
@@ -53,6 +52,13 @@ namespace peksegSzimulator
 
         private void bDelete_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < peksegSzam; i++)
+            {
+                lBPeksegLista.SelectedIndex = i;
+                Pekaru aru = (Pekaru)lBTermekek.SelectedItem;
+                Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
+                pekseg.lisaElemTorlese(aru);
+            }
             lBTermekek.Items.Remove(lBTermekek.SelectedItem);
         }
         private void lBTermekek_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +71,7 @@ namespace peksegSzimulator
                 Pekaru aruk = (Pekaru)lBTermekek.SelectedItem;
                 tBNev.Text = aruk.Nev;
                 tBAr.Text = Convert.ToString(aruk.Ar);
+                lBTermekLista.Items.Clear();
             }
             catch (Exception)
             {
@@ -73,21 +80,42 @@ namespace peksegSzimulator
 
         private void bPeksegetHozzaad_Click(object sender, EventArgs e)
         {
-            
+            string nev = tBUjPekseg.Text;
+
+            lBPeksegLista.Items.Add(new Pekseg(nev, DateTime.Now));
+            peksegSzam++;
         }
 
         private void hozzaAd_Click(object sender, EventArgs e)
         {
-            if (lBTermekek.SelectedIndex > -1 && lBPeksegLista.SelectedIndex > -1)
+            int pek = lBPeksegek.SelectedIndex;
+            int termek = lBTermekek.SelectedIndex;
+            //string pekseg = lBPeksegLista.Items(lBPeksegLista.SelectedItem);
+            if (lBTermekek.SelectedIndex == -1 && lBPeksegLista.SelectedIndex == -1)
             {
-                MessageBox.Show("nincs kitültve anév vagy az ár mező");
+                MessageBox.Show("nincs kijelölve elem");
             }
-            //si2?
+            else
+            {
+                Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
+                Pekaru aru = (Pekaru)lBTermekek.SelectedItem;
 
-            //si2.add ter
-            string termek;
+                pekseg.listahozAdd(aru);
+                for (int i = 0; i < pekseg.szamol(); i++)
+                {
+                    lBTermekLista.Items.Add(pekseg.listaKiIras(i));
+                }
+            }
+        }
 
-            Pekaru aruk = (Pekaru)lBTermekek.SelectedItem;
+        private void lBPeksegLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lBTermekLista.Items.Clear();
+            Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
+            for (int i = 0; i < pekseg.szamol(); i++)
+            {
+                lBTermekLista.Items.Add(pekseg.listaKiIras(i));
+            }
         }
     }
 }
