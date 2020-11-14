@@ -123,6 +123,12 @@ namespace peksegSzimulator
             for (int i = 0; i < pekseg.szamol(); i++)
             {
                 lBTermekLista.Items.Add(pekseg.listaKiIras(i));
+                //lBTermekLista.Items.Add("fgdfgergjerguoer"+i);
+
+            }
+            for (int i = 0; i < pekseg.szamol(); i++)
+            {
+                MessageBox.Show(pekseg.listaKiIras(i) + "");
             }
         }
 
@@ -172,6 +178,7 @@ namespace peksegSzimulator
         private void lBPeksegek_SelectedIndexChanged(object sender, EventArgs e)
         {
             Pekseg pekseg = (Pekseg)lBPeksegek.SelectedItem;
+            MessageBox.Show(pekseg.szamol()+"");
             tBNev.Text = pekseg.Nev;
             dTPAlapit.Value = pekseg.Alapitva;
             dUDDarabSam.Text = Convert.ToString(pekseg.szamol());
