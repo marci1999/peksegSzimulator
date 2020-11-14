@@ -87,7 +87,7 @@ namespace peksegSzimulator
 
         public double szazalek(int x)
         {
-            return this.Aruk.Count / x;
+            return this.Aruk.Count() / x;
         }
 
         public string Nev { get => nev; set => nev = value; }

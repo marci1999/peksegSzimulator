@@ -84,11 +84,12 @@ namespace peksegSzimulator
         private void bPeksegetHozzaad_Click(object sender, EventArgs e)
         {
             string nev = tBUjPekseg.Text;
+            var l = new Pekseg(nev, DateTime.Now);
+            lBPeksegLista.Items.Add(l);
 
-            lBPeksegLista.Items.Add(new Pekseg(nev, DateTime.Now));
             peksegSzam++;
 
-            pekseg.Add(new Pekseg(nev, DateTime.Now));
+            pekseg.Add(l);
         }
 
         private void hozzaAd_Click(object sender, EventArgs e)
