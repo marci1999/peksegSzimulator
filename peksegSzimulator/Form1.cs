@@ -13,11 +13,10 @@ namespace peksegSzimulator
     public partial class FPekseg : Form
     {
         int peksegSzam = 0;
+        List<Pekseg> pekseg = new List<Pekseg>();
         public FPekseg()
         {
             InitializeComponent();
-
-
         }
 
         private void bTermeketHozzaad_Click(object sender, EventArgs e)
@@ -32,7 +31,23 @@ namespace peksegSzimulator
             }
         }
 
-        private void bMentes_Click(object sender, EventArgs e)
+        private void bDeleteAru_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < peksegSzam; i++)
+            {
+                lBPeksegLista.SelectedIndex = i;
+                Pekaru aru = (Pekaru)lBTermekek.SelectedItem;
+                Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
+                pekseg.lisaElemTorlese(aru);
+            }
+            lBTermekek.Items.Remove(lBTermekek.SelectedItem);
+            lBTermekek.SelectedIndex = -1;
+            bTermeketHozzaad.Visible = true;
+            bDeleteAru.Visible = false;
+            bAtnevezAru.Visible = false;
+        }
+
+        private void bAtnevezAru_Click(object sender, EventArgs e)
         {
             try
             {
@@ -46,26 +61,14 @@ namespace peksegSzimulator
             lBTermekek.SelectedIndex = -1;
 
             bTermeketHozzaad.Visible = true;
-            bDelete.Visible = false;
-            bMentes.Visible = false;
-        }
-
-        private void bDelete_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < peksegSzam; i++)
-            {
-                lBPeksegLista.SelectedIndex = i;
-                Pekaru aru = (Pekaru)lBTermekek.SelectedItem;
-                Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
-                pekseg.lisaElemTorlese(aru);
-            }
-            lBTermekek.Items.Remove(lBTermekek.SelectedItem);
+            bDeleteAru.Visible = false;
+            bAtnevezAru.Visible = false;
         }
         private void lBTermekek_SelectedIndexChanged(object sender, EventArgs e)
         {
             bTermeketHozzaad.Visible = false;
-            bDelete.Visible = true;
-            bMentes.Visible = true;
+            bDeleteAru.Visible = true;
+            bAtnevezAru.Visible = true;
             try
             {
                 Pekaru aruk = (Pekaru)lBTermekek.SelectedItem;
@@ -84,6 +87,8 @@ namespace peksegSzimulator
 
             lBPeksegLista.Items.Add(new Pekseg(nev, DateTime.Now));
             peksegSzam++;
+
+            pekseg.Add(new Pekseg(nev, DateTime.Now));
         }
 
         private void hozzaAd_Click(object sender, EventArgs e)
@@ -110,12 +115,76 @@ namespace peksegSzimulator
 
         private void lBPeksegLista_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bPeksegetHozzaad.Visible = false;
+            bAtnevezPekseg.Visible = true;
+            bTorol.Visible = true;
             lBTermekLista.Items.Clear();
             Pekseg pekseg = (Pekseg)lBPeksegLista.SelectedItem;
             for (int i = 0; i < pekseg.szamol(); i++)
             {
                 lBTermekLista.Items.Add(pekseg.listaKiIras(i));
             }
+        }
+
+        private void bAtnavez_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lBPeksegLista.Items.Remove(lBPeksegLista.SelectedItem);
+                lBPeksegLista.Items.Add(new Pekaru(tBNev.Text, Convert.ToInt32(tBAr.Text), cBLaktozmentes.Checked));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("nincs kitültve anév vagy az ár mező");
+            }
+            lBTermekek.SelectedIndex = -1;
+
+            bPeksegetHozzaad.Visible = true;
+            bAtnevezPekseg.Visible = false;
+            bTorol.Visible = false;
+        }
+
+        private void bTorol_Click(object sender, EventArgs e)
+        {
+
+            lBTermekek.Items.Remove(lBTermekek.SelectedItem);
+            lBTermekek.SelectedIndex = -1;
+            bPeksegetHozzaad.Visible = true;
+            bAtnevezPekseg.Visible = false;
+            bTorol.Visible = false;
+        }
+
+        private void tCPeksegKezelo_Selected(object sender, TabControlEventArgs e)
+        {
+            lBPeksegek.Items.Clear();
+
+            for (int i = 0; i < pekseg.Count; i++)
+            {
+                lBPeksegek.Items.Add(peksegolvaso(i));
+            }
+        }
+
+        private Pekseg peksegolvaso(int i)
+        {
+            return pekseg.ElementAt(i);
+        }
+
+        private void lBPeksegek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Pekseg pekseg = (Pekseg)lBPeksegek.SelectedItem;
+            tBNev.Text = pekseg.Nev;
+            dTPAlapit.Value = pekseg.Alapitva;
+            dUDDarabSam.Text = Convert.ToString(pekseg.szamol());
+            int osz = 0;
+            for (int i = 0; i < pekseg.szamol(); i++)
+            {
+                osz += pekseg.ar(i);
+            }
+            dUDAtlagar.Text = Convert.ToString(osz/pekseg.szamol());
+            tBlegdragabb.Text = Convert.ToString(pekseg.kereso(1));
+            tBlegolcsobb.Text = Convert.ToString(pekseg.kereso(0));
+            dUDMenyiseg.Text = Convert.ToString(pekseg.oszegzo());
+            dUDSzazalek.Text = Convert.ToString(pekseg.szazalek(pekseg.oszegzo()));
         }
     }
 }

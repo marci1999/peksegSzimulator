@@ -39,6 +39,57 @@ namespace peksegSzimulator
             return this.Aruk.Count;
         }
 
+        public int ar(int szam)
+        {
+            return this.Aruk.ElementAt(szam).Ar;
+        }
+
+        public int kereso(int melyik)
+        {
+            int index = 0;
+            if (melyik == 1){
+                int max = this.Aruk.ElementAt(0).Ar;
+                for (int i = 1; i < this.aruk.Count; i++)
+                {
+                    if (this.Aruk.ElementAt(i).Ar > max)
+                    {
+                        max = Aruk.ElementAt(i).Ar;
+                        index = i;
+                    }
+                }
+                return index;
+            } else{
+                int min = this.Aruk.ElementAt(0).Ar;
+                for (int i = 1; i < this.aruk.Count; i++)
+                {
+                    if (this.Aruk.ElementAt(i).Ar < min)
+                    {
+                        min = Aruk.ElementAt(i).Ar;
+                        index = i;
+                    }
+                }
+                return index;
+            }
+        }
+
+        public int oszegzo()
+        {
+            int osszeg = 0;
+            for (int i = 0; i < this.Aruk.Count; i++)
+            {
+                if (this.Aruk.ElementAt(i).Laktozmentes)
+                {
+                    osszeg++;
+                };
+            }
+            return osszeg;
+        }
+
+        public double szazalek(int x)
+        {
+            return this.Aruk.Count / x;
+        }
+
         public string Nev { get => nev; set => nev = value; }
         public DateTime Alapitva { get => alapitva;}
         internal List<Pekaru> Aruk { get => aruk;}

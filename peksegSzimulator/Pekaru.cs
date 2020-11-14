@@ -18,7 +18,7 @@ namespace peksegSzimulator
             this.ar = ar;
             this.laktozmentes = laktozmentes;
         }
-
+         
         public string Nev { get => nev; set => nev = value;}
         public int Ar { get => ar; set => ar = value;}
         public bool Laktozmentes { get => laktozmentes; set => laktozmentes = value; }
