@@ -85,9 +85,22 @@ namespace peksegSzimulator
             return osszeg;
         }
 
+        public bool vanLaktozmentesTermek()
+        {
+            for (int i = 0; i < this.Aruk.Count; i++)
+            {
+                if (this.Aruk.ElementAt(i).Laktozmentes)
+                {
+                    return true;
+                };
+            }
+            return false;
+        }
+
         public double szazalek(int x)
         {
-            return this.Aruk.Count() / x;
+            double max = this.Aruk.Count();
+            return (x/ max)*100;
         }
 
         public string Nev { get => nev; set => nev = value; }

@@ -47,9 +47,10 @@
             this.tBNev = new System.Windows.Forms.TextBox();
             this.tBAr = new System.Windows.Forms.TextBox();
             this.tPStatisztkak = new System.Windows.Forms.TabPage();
+            this.tBlegdragabb = new System.Windows.Forms.TextBox();
+            this.tBlegolcsobb = new System.Windows.Forms.TextBox();
             this.dUDMenyiseg = new System.Windows.Forms.DomainUpDown();
             this.dUDDarabSam = new System.Windows.Forms.DomainUpDown();
-            this.dUDSzazalek = new System.Windows.Forms.DomainUpDown();
             this.tBNot11 = new System.Windows.Forms.TextBox();
             this.tBNot10 = new System.Windows.Forms.TextBox();
             this.tBNot9 = new System.Windows.Forms.TextBox();
@@ -65,8 +66,7 @@
             this.tBNot1 = new System.Windows.Forms.TextBox();
             this.tBPeksegNev = new System.Windows.Forms.TextBox();
             this.lBPeksegek = new System.Windows.Forms.ListBox();
-            this.tBlegolcsobb = new System.Windows.Forms.TextBox();
-            this.tBlegdragabb = new System.Windows.Forms.TextBox();
+            this.dUDSzazalek = new System.Windows.Forms.DomainUpDown();
             this.tCPeksegKezelo.SuspendLayout();
             this.tPAdatok.SuspendLayout();
             this.gBPekseg.SuspendLayout();
@@ -262,11 +262,11 @@
             // 
             // tPStatisztkak
             // 
+            this.tPStatisztkak.Controls.Add(this.dUDSzazalek);
             this.tPStatisztkak.Controls.Add(this.tBlegdragabb);
             this.tPStatisztkak.Controls.Add(this.tBlegolcsobb);
             this.tPStatisztkak.Controls.Add(this.dUDMenyiseg);
             this.tPStatisztkak.Controls.Add(this.dUDDarabSam);
-            this.tPStatisztkak.Controls.Add(this.dUDSzazalek);
             this.tPStatisztkak.Controls.Add(this.tBNot11);
             this.tPStatisztkak.Controls.Add(this.tBNot10);
             this.tPStatisztkak.Controls.Add(this.tBNot9);
@@ -290,6 +290,20 @@
             this.tPStatisztkak.Text = "Statisztkák";
             this.tPStatisztkak.UseVisualStyleBackColor = true;
             // 
+            // tBlegdragabb
+            // 
+            this.tBlegdragabb.Location = new System.Drawing.Point(489, 164);
+            this.tBlegdragabb.Name = "tBlegdragabb";
+            this.tBlegdragabb.Size = new System.Drawing.Size(100, 20);
+            this.tBlegdragabb.TabIndex = 21;
+            // 
+            // tBlegolcsobb
+            // 
+            this.tBlegolcsobb.Location = new System.Drawing.Point(489, 137);
+            this.tBlegolcsobb.Name = "tBlegolcsobb";
+            this.tBlegolcsobb.Size = new System.Drawing.Size(100, 20);
+            this.tBlegolcsobb.TabIndex = 20;
+            // 
             // dUDMenyiseg
             // 
             this.dUDMenyiseg.InterceptArrowKeys = false;
@@ -305,15 +319,6 @@
             this.dUDDarabSam.Name = "dUDDarabSam";
             this.dUDDarabSam.Size = new System.Drawing.Size(39, 20);
             this.dUDDarabSam.TabIndex = 18;
-            // 
-            // dUDSzazalek
-            // 
-            this.dUDSzazalek.Location = new System.Drawing.Point(468, 190);
-            this.dUDSzazalek.Name = "dUDSzazalek";
-            this.dUDSzazalek.Size = new System.Drawing.Size(47, 20);
-            this.dUDSzazalek.TabIndex = 17;
-            this.dUDSzazalek.Text = "100%";
-            this.dUDSzazalek.Visible = false;
             // 
             // tBNot11
             // 
@@ -447,19 +452,14 @@
             this.lBPeksegek.TabIndex = 0;
             this.lBPeksegek.SelectedIndexChanged += new System.EventHandler(this.lBPeksegek_SelectedIndexChanged);
             // 
-            // tBlegolcsobb
+            // dUDSzazalek
             // 
-            this.tBlegolcsobb.Location = new System.Drawing.Point(489, 137);
-            this.tBlegolcsobb.Name = "tBlegolcsobb";
-            this.tBlegolcsobb.Size = new System.Drawing.Size(100, 20);
-            this.tBlegolcsobb.TabIndex = 20;
-            // 
-            // tBlegdragabb
-            // 
-            this.tBlegdragabb.Location = new System.Drawing.Point(489, 164);
-            this.tBlegdragabb.Name = "tBlegdragabb";
-            this.tBlegdragabb.Size = new System.Drawing.Size(100, 20);
-            this.tBlegdragabb.TabIndex = 21;
+            this.dUDSzazalek.InterceptArrowKeys = false;
+            this.dUDSzazalek.Location = new System.Drawing.Point(468, 190);
+            this.dUDSzazalek.Name = "dUDSzazalek";
+            this.dUDSzazalek.Size = new System.Drawing.Size(51, 20);
+            this.dUDSzazalek.TabIndex = 22;
+            this.dUDSzazalek.Text = "0%";
             // 
             // FPekseg
             // 
@@ -508,7 +508,6 @@
         private System.Windows.Forms.TextBox tBNot2;
         private System.Windows.Forms.TextBox tBNot6;
         private System.Windows.Forms.TextBox tBNot8;
-        private System.Windows.Forms.DomainUpDown dUDSzazalek;
         private System.Windows.Forms.TextBox tBNot11;
         private System.Windows.Forms.TextBox tBNot10;
         private System.Windows.Forms.TextBox tBNot9;
@@ -522,6 +521,7 @@
         private System.Windows.Forms.Button bAtnevezPekseg;
         private System.Windows.Forms.TextBox tBlegdragabb;
         private System.Windows.Forms.TextBox tBlegolcsobb;
+        private System.Windows.Forms.DomainUpDown dUDSzazalek;
     }
 }
 

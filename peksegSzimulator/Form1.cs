@@ -27,7 +27,7 @@ namespace peksegSzimulator
             }
             catch (Exception)
             {
-                MessageBox.Show("nincs kitültve anév vagy az ár mező");
+                MessageBox.Show("nincs kijelölve a név vagy az ár mező");
             }
         }
 
@@ -56,7 +56,7 @@ namespace peksegSzimulator
             }
             catch (Exception)
             {
-                MessageBox.Show("nincs kitültve anév vagy az ár mező");
+                MessageBox.Show("nincs kijelölve a név vagy az ár mező");
             }
             lBTermekek.SelectedIndex = -1;
 
@@ -124,12 +124,6 @@ namespace peksegSzimulator
             for (int i = 0; i < pekseg.szamol(); i++)
             {
                 lBTermekLista.Items.Add(pekseg.listaKiIras(i));
-                //lBTermekLista.Items.Add("fgdfgergjerguoer"+i);
-
-            }
-            for (int i = 0; i < pekseg.szamol(); i++)
-            {
-                MessageBox.Show(pekseg.listaKiIras(i) + "");
             }
         }
 
@@ -142,7 +136,7 @@ namespace peksegSzimulator
             }
             catch (Exception)
             {
-                MessageBox.Show("nincs kitültve anév vagy az ár mező");
+                MessageBox.Show("nincs kijelölve a név vagy az ár mező");
             }
             lBTermekek.SelectedIndex = -1;
 
@@ -179,7 +173,6 @@ namespace peksegSzimulator
         private void lBPeksegek_SelectedIndexChanged(object sender, EventArgs e)
         {
             Pekseg pekseg = (Pekseg)lBPeksegek.SelectedItem;
-            MessageBox.Show(pekseg.szamol()+"");
             tBNev.Text = pekseg.Nev;
             dTPAlapit.Value = pekseg.Alapitva;
             dUDDarabSam.Text = Convert.ToString(pekseg.szamol());
@@ -189,10 +182,14 @@ namespace peksegSzimulator
                 osz += pekseg.ar(i);
             }
             dUDAtlagar.Text = Convert.ToString(osz/pekseg.szamol());
-            tBlegdragabb.Text = Convert.ToString(pekseg.kereso(1));
-            tBlegolcsobb.Text = Convert.ToString(pekseg.kereso(0));
+            tBlegdragabb.Text = pekseg.Aruk.ElementAt(pekseg.kereso(1)) + "";
+            tBlegolcsobb.Text = pekseg.Aruk.ElementAt(pekseg.kereso(0)) + "";
             dUDMenyiseg.Text = Convert.ToString(pekseg.oszegzo());
-            dUDSzazalek.Text = Convert.ToString(pekseg.szazalek(pekseg.oszegzo()));
+            MessageBox.Show(pekseg.szazalek(pekseg.oszegzo())+"");
+            if (pekseg.vanLaktozmentesTermek())
+            {
+                dUDSzazalek.Text = Math.Round(pekseg.szazalek(pekseg.oszegzo()),1)+"%";
+            }
         }
     }
 }
